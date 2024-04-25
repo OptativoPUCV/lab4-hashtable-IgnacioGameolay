@@ -44,3 +44,19 @@ hashmap.c:83:67: error: ‘*map->buckets’ is a pointer; did you mean to use �
       |                                                                   ->
 Compilation failed
 8323107
+Thu 25 Apr 2024 01:54:11 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:83:70: error: expected identifier before ‘->’ token
+   83 |   if (map == NULL || map->buckets == NULL || !is_equal(map->buckets->->key,key)) return;
+      |                                                                      ^~
+hashmap.c:83:47: error: too few arguments to function ‘is_equal’
+   83 |   if (map == NULL || map->buckets == NULL || !is_equal(map->buckets->->key,key)) return;
+      |                                               ^~~~~~~~
+hashmap.c:35:5: note: declared here
+   35 | int is_equal(void* key1, void* key2){
+      |     ^~~~~~~~
+Compilation failed
+d02de93
