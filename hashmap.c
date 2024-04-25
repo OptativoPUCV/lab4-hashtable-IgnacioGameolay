@@ -45,7 +45,7 @@ void insertMap(HashMap * map, char * key, void * value) {
   if ((map->buckets[position] == NULL) || (is_equal(map->buckets[position]->key, NULL))){
     map->buckets[position] = createPair(key, value);
     
-    map->buckets[position]->key = key;
+    strcpy(map->buckets[position]->key,key);
     map->buckets[position]->value = value;
     map->size++;
     map->current = position;
@@ -62,7 +62,7 @@ void enlarge(HashMap * map) {
   int index = 0;
   while(index < map->capacity){
     insertMap(map, old_buckets[index]->key, old_buckets[index]->value);
-    map->size++;
+    (map->size)++;
     index++;
   }
 
