@@ -88,6 +88,7 @@ Pair * searchMap(HashMap * map,  char * key) {
   int position = hash(key,map->capacity);
 
   if (is_equal(map->buckets[position]->key,key)){
+    map->current = position;
     return map->buckets[position];
   }
 
