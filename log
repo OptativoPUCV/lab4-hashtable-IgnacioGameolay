@@ -226,3 +226,28 @@ Thu 25 Apr 2024 04:06:11 AM UTC:
  tests:  10|3
 total_score: 40/70
 b7fc0bd
+Thu 25 Apr 2024 04:10:33 AM UTC: 
+ hashmap.c | 17 +++++++----------
+ 1 file changed, 7 insertions(+), 10 deletions(-)
+In file included from test.c:4:
+hashmap.c:57:6: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘->’ token
+   57 |   map->buckets[position] = createPair(key, value);
+      |      ^~
+hashmap.c:58:13: error: expected ‘)’ before ‘->’ token
+   58 |   strcpy(map->buckets[position]->key,key);
+      |             ^~
+      |             )
+hashmap.c:59:6: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘->’ token
+   59 |   map->buckets[position]->value = value;
+      |      ^~
+hashmap.c:60:6: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘->’ token
+   60 |   map->size++;
+      |      ^~
+hashmap.c:61:6: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘->’ token
+   61 |   map->current = position;
+      |      ^~
+hashmap.c:62:1: error: expected identifier or ‘(’ before ‘}’ token
+   62 | }
+      | ^
+Compilation failed
+31e10dc
