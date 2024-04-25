@@ -192,3 +192,14 @@ hashmap.c:97:58: error: ‘*map->buckets’ is a pointer; did you mean to use �
       |                                                          ->
 Compilation failed
 bec5a40
+Thu 25 Apr 2024 03:11:00 AM UTC: 
+ hashmap.c | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘solveCollisions’:
+hashmap.c:44:1: error: control reaches end of non-void function [-Werror=return-type]
+   44 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+dcff5a6

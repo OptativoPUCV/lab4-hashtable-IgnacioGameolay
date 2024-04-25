@@ -39,6 +39,11 @@ int is_equal(void* key1, void* key2){
 }
 
 
+int solveCollisions(HashMap * map, char * key, void * value){
+  
+}
+
+////
 void insertMap(HashMap * map, char * key, void * value) {
   int position = hash(key,map->capacity);
   
@@ -94,7 +99,7 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-  if (map == NULL || map->buckets == NULL || map->buckets->key == NULL) return;
+  if (map == NULL || map->buckets == NULL) return;
 
   Pair* pair = searchMap(map,key);
   if (pair != NULL){
