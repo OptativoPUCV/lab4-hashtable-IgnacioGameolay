@@ -39,10 +39,6 @@ int is_equal(void* key1, void* key2){
 }
 
 
-int solveCollisions(HashMap * map, char * key, void * value){
-  
-}
-
 ////
 void insertMap(HashMap * map, char * key, void * value) {
   int position = hash(key,map->capacity);
@@ -55,6 +51,19 @@ void insertMap(HashMap * map, char * key, void * value) {
     map->size++;
     map->current = position;
   }
+  else {
+    while (map->buckets[position] != NULL && map->buckets[position]->key != NULL) {
+        position = (position + 1) % map->capacity;
+      
+        if (index == hash(key, map->capacity)) {
+            enlarge(map);
+            insertMap(map, key, value);
+            return;
+        }
+    }
+  }
+
+  
 
 }
 
