@@ -66,3 +66,27 @@ Thu 25 Apr 2024 01:54:22 AM UTC:
  tests:  4|5
 total_score: 20/70
 4b980f0
+Thu 25 Apr 2024 01:59:10 AM UTC: 
+ hashmap.c | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:59:8: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘capacidad’; did you mean ‘capacity’?
+   59 |   map->capacidad *= 2;
+      |        ^~~~~~~~~
+      |        capacity
+hashmap.c:60:55: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘capacidad’; did you mean ‘capacity’?
+   60 |   map->buckets = (Pair**) malloc(sizeof(Pair*) * map->capacidad);
+      |                                                       ^~~~~~~~~
+      |                                                       capacity
+hashmap.c:63:22: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘capacidad’; did you mean ‘capacity’?
+   63 |   while(index < map->capacidad){
+      |                      ^~~~~~~~~
+      |                      capacity
+hashmap.c:64:5: error: implicit declaration of function ‘insert’; did you mean ‘insertMap’? [-Werror=implicit-function-declaration]
+   64 |     insert(map, old_buckets[index]->key, old_buckets[index]->value);
+      |     ^~~~~~
+      |     insertMap
+cc1: all warnings being treated as errors
+Compilation failed
+3c7143e
