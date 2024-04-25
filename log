@@ -181,3 +181,14 @@ Thu 25 Apr 2024 02:42:14 AM UTC:
  tests:  10|3
 total_score: 40/70
 e608491
+Thu 25 Apr 2024 02:44:45 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:97:58: error: ‘*map->buckets’ is a pointer; did you mean to use ‘->’?
+   97 |   if (map == NULL || map->buckets == NULL || map->buckets->key == NULL) return;
+      |                                                          ^~
+      |                                                          ->
+Compilation failed
+bec5a40
